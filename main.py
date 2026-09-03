@@ -1,7 +1,13 @@
-from usb_relay_diustou import USB_RELAY
+import libtmux
 
 if __name__ == "__main__":
-    relay = USB_RELAY()
-    relay.relay_on()  # Turn on the relay
-    input("Press Enter to turn off the relay...")
-    relay.relay_off()  # Turn off the relay
+    svr = libtmux.Server()
+    if not svr.has_session("haro"):
+        haro_session = svr.new_session(session_name="haro")
+    else:
+        haro_session = svr.sessions.get(session_name="haro")
+    window = haro_session.active_window
+    panel = window.active_pane
+    panel.send_keys("echo hello", enter=True)  # Send Ctrl+C to stop any running process
+    print(svr)
+    print(haro_session)
