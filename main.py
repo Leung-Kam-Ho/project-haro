@@ -11,3 +11,5 @@ if __name__ == "__main__":
     panel.send_keys("echo hello", enter=True)  # Send Ctrl+C to stop any running process
     print(svr)
     print(haro_session)
+    # kill-session
+    haro_session.kill()  # Kill the session
