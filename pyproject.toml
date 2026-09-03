@@ -1,0 +1,14 @@
+[project]
+name = "project-haro"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "simple-audio-server",
+    "usb-relay-diustou",
+]
+
+[tool.uv.sources]
+usb-relay-diustou = { git = "https://github.com/Leung-Kam-Ho/usb-relay-diustou.git" }
+simple-audio-server = { git = "https://github.com/Leung-Kam-Ho/simple-audio-server.git" }
