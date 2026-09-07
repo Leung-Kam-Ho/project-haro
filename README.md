@@ -22,7 +22,10 @@ project-haro/
 ├── pyproject.toml   # Project config (uv) with dependencies
 ├── core/
 │   ├── audio.py     # Audio server wrapper — plays sounds via simple-audio-server
-│   └── indicator.py # Relay control — manages USB relay for hardware actuation
+│   ├── indicator.py # Relay control — manages USB relay for hardware actuation
+│   ├── reaction.py  # 🔄 Reaction system — sensor → response pipeline
+│   ├── vision.py    # 🔄 Vision system — camera input, object detection
+│   └── agent.py     # 🔄 AI agent system — decision making, task planning
 ├── sounds/
 │   ├── oh_hello.mp3 # Greeting sound
 │   └── new_type.mp3 # New type / event sound
@@ -43,4 +46,31 @@ project-haro/
 - ✅ Audio module implemented
 - ✅ Relay/indicator module implemented
 - ✅ Sounds directory with sample audio
-- 🔄 tmux session management in `main.py`
+- 🔄 **Reaction system** — pending (sensor input → response output)
+- 🔄 **Vision system** — pending (camera capture, processing, recognition)
+- 🔄 **AI agent system** — pending (decision making, task planning, memory)
+
+## Planned Systems
+
+### Reaction System (`core/reaction.py`)
+
+Maps sensor inputs to physical responses:
+- Input: camera, microphone, buttons, encoders
+- Output: relay, audio, display
+- Pipeline: `detect → classify → actuate`
+
+### Vision System (`core/vision.py`)
+
+Handles all camera-related functionality:
+- Image capture and preprocessing
+- Object/face detection
+- Gesture or color recognition
+- Frame analysis for environmental awareness
+
+### AI Agent System (`core/agent.py`)
+
+The brain of the robot:
+- Task planning and execution
+- Memory/context management
+- Integration with LLM APIs
+- Decision making based on vision + sensor data
